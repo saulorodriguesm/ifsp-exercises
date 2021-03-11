@@ -1,0 +1,40 @@
+Recepcionista
+(null)
+f
+18
+0
+3623840.000000
+5
+
+Ajudante geral
+(null)
+m
+30
+0
+3623840.000000
+2
+
+Gerente de RH
+(null)
+x
+30
+0
+3623840.000000
+2
+
+Analista de Sistemas
+(null)
+x
+25
+0
+3623840.000000
+1
+
+Porteiro
+(null)
+x
+35
+50
+3623840.000000
+2
+
