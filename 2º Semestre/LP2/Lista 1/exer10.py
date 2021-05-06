@@ -1,5 +1,0 @@
-gato1 = float(input("Digite a quantidade de ração para o primeiro gato (Em gramas): \n"))
-gato2 = float(input("Digite a quantidade de ração para o segundo gato (Em gramas): \n"))
-racao = float(input("Digite a quantidade de ração em kilos: \n"))
-qtd = (racao * 1000) - ((gato1 + gato2)* 5)
-print("Restará de ração:",round(qtd, 2))
