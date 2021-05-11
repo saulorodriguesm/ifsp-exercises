@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    ListaCli
+{% endblock %}
+
+{% block main %}
+    <!-- Barra de pesquisa -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <form class="form-inline"  method="post">
+            {% csrf_token %}
+            <input class="form-control mr-sm-2" type="text" placeholder="Pesquisar" name="cliente_input">
+            <button class="btn btn-success" type="submit">Pesquisar</button>
+        </form>
+    </nav>
+
+   <br>
+
+<!-- Mensagagens das Views -->
+{% if messages %}
+    {% for mensagem in messages %}
+        <div class="alert alert-info alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ mensagem }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+
+    <h2>Lista de Clientes</h2>
+    {% for cliente in dados %}
+        Nome: {{ cliente.nome }} <br>
+        {% if cliente.endereco %}
+            End: {{ cliente.endereco }} <br>
+        {% endif %}
+        {% if cliente.complemento %}
+            Comp: {{ cliente.complemento }} <br>
+        {% endif %}
+        {% if cliente.bairro %}
+            Bairro: {{ cliente.bairro }} <br>
+        {% endif %}
+        {% if cliente.cidade %}
+            Cidade: {{ cliente.cidade }} <br>
+        {% endif %}
+        {% if cliente.cep %}
+            CEP: {{ cliente.cep }} <br>
+        {% endif %}
+        Email: {{ cliente.email }} <br>
+        {% if cliente.telefone %}
+            Fone: {{ cliente.telefone }} <br>
+        {% endif %}
+        <!-- teste para verificar se tem imagem salva no banco -->
+        {% if cliente.foto %}
+            <img src="{{ cliente.foto.url }}" width="100">  <br>
+        {% else %}
+            <img src="{% static 'img/perfil_generico.jpeg' %}" width="100">  <br>
+        {% endif %}
+
+        <a href="{% url 'url_atualiza_cliente' cliente.id %}">Atualizar</a>
+        <a href="{% url 'url_exlcui_cliente' cliente.id %}">Excluir</a> <br>
+        <p>------------------------------------------------------------ </p>
+    {% endfor %}
+
+
+{% endblock %}

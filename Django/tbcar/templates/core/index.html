@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    Home-TBcar
+{% endblock %}
+
+{% block h2 %}
+   TBcar - Estacionamento
+{% endblock %}
+
+{% block main %}
+
+    <a href="/">Home</a>
+    <a href="cadastro_cliente/">Cadastro_Cliente</a> &nbsp;
+    <a href="listagem_clientes/">Lista_Clientes</a> &nbsp;
+    <a href="cadastro_veiculo/">Cadastro_Veículo</a> &nbsp;
+    <a href="listagem_veiculos/">Listagem_Veículos</a> &nbsp;
+    <a href="listagem_parametros/">Tabela</a> <br><br>
+    <img src="{% static 'img/fundo.png' %}" width="600">
+
+{% endblock %}
